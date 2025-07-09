@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>세아베스틸지주 ERP | Google 계정 로그인(SSO) 안내</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Calm Neutrals -->
+    <!-- Application Structure Plan: The SPA is designed as a single-page, vertical-scrolling guide. This structure is intuitive for a user manual, allowing users to either read sequentially or jump to specific sections via a sticky navigation bar (Introduction, 'What's Changed', Step-by-Step, Features, Security). This is more user-friendly than flipping through PDF pages, as it provides both a linear flow and quick, random access to information. The content is grouped thematically (e.g., all additional features are together) rather than by PDF page number to improve conceptual understanding. -->
+    <!-- Visualization & Content Choices:
+        - Report Info: As-Is vs To-Be screens. Goal: Compare. Method: Side-by-side comparison using HTML/Tailwind Grid with highlighted new elements. Justification: Direct visual comparison is the clearest way to show a UI change. Library: N/A.
+        - Report Info: Step-by-step login process. Goal: Guide. Method: A vertical, numbered list with corresponding images and text for each step. Justification: This mimics the user's workflow, making the instructions easy to follow. Interaction: Subtle fade-in on scroll to guide attention. Library: Vanilla JS.
+        - Report Info: Additional features (Enable Login, Delete Info). Goal: Inform. Method: Styled HTML cards with icons, titles, and descriptions. Justification: Modular cards break down information into digestible chunks, improving readability over a single text block. Library: N/A.
+        - CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-4">
+                    <img src="https://placehold.co/96x32/E2E8F0/475569?text=Logo" alt="로고 플레이스홀더" class="h-8 w-auto">
+                    <span class="text-xl font-bold text-slate-700 hidden sm:block">Google 계정 로그인 안내</span>
+                </div>
+                <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-600">
+                    <a href="#introduction" class="hover:text-blue-600 transition-colors">소개</a>
+                    <a href="#comparison" class="hover:text-blue-600 transition-colors">달라진 점</a>
+                    <a href="#guide" class="hover:text-blue-600 transition-colors">로그인 방법</a>
+                    <a href="#features" class="hover:text-blue-600 transition-colors">추가 기능</a>
+                    <a href="#security" class="hover:text-blue-600 transition-colors">보안 안내</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+        
+        <section id="introduction" class="text-center mb-20 md:mb-32 fade-in">
+             <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">더욱 간편하고 안전해진 ERP 시스템</h1>
+             <p class="max-w-3xl mx-auto text-lg text-slate-600">
+                이제 Google 계정으로 쉽고 빠르게 세아베스틸지주 ERP 시스템에 로그인하세요.<br>
+                복잡한 비밀번호 입력 없이, 클릭 한 번으로 업무를 시작할 수 있습니다.
+             </p>
+             <p class="mt-6 text-md font-semibold text-slate-700">- 디지털 전략팀 -</p>
+        </section>
+
+        <section id="comparison" class="mb-20 md:mb-32 fade-in">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-2">무엇이 달라졌을까요?</h2>
+                <p class="text-slate-600">로그인 화면에 Google 계정으로 바로 접속할 수 있는 버튼이 추가되었습니다.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="p-6 bg-white rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold mb-4 text-center text-slate-500">기존 로그인 (As-is)</h3>
+                    <div class="w-full aspect-video bg-slate-100 rounded-lg border overflow-hidden">
+                        <img src="https://placehold.co/600x338/E2E8F0/475569?text=기존+로그인+화면" alt="기존 로그인 화면 플레이스홀더" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-lg border-2 border-blue-500">
+                    <h3 class="text-xl font-bold mb-4 text-center text-blue-600">새로운 로그인 (To-be)</h3>
+                    <div class="w-full aspect-video bg-slate-100 rounded-lg border overflow-hidden">
+                        <img src="https://placehold.co/600x338/E2E8F0/475569?text=새로운+로그인+화면" alt="새로운 로그인 화면 플레이스홀더" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="guide" class="mb-20 md:mb-32 fade-in">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-2">Google 계정으로 로그인하기</h2>
+                <p class="text-slate-600">아래 4단계를 따라 간편하게 로그인할 수 있습니다.</p>
+            </div>
+            <div class="relative">
+                <div class="absolute left-1/2 -translate-x-1/2 h-full w-0.5 bg-slate-200" aria-hidden="true"></div>
+                <div class="space-y-16">
+                    <div class="flex items-center justify-center relative fade-in">
+                        <div class="md:w-1/2 md:pr-8 text-right">
+                            <div class="p-6 bg-white rounded-xl shadow-md">
+                                <h4 class="font-bold text-lg mb-2">1단계: Google 버튼 클릭</h4>
+                                <p>로그인 화면에서<br><span class="font-bold text-blue-600">[Sign in with Google]</span> 버튼을 클릭합니다.</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 -translate-x-1/2 w-8 h-8 bg-blue-500 rounded-full border-4 border-white flex items-center justify-center text-white font-bold">1</div>
+                        <div class="hidden md:block md:w-1/2"></div>
+                    </div>
+
+                    <div class="flex items-center justify-center relative fade-in">
+                         <div class="hidden md:block md:w-1/2"></div>
+                         <div class="absolute left-1/2 -translate-x-1/2 w-8 h-8 bg-blue-500 rounded-full border-4 border-white flex items-center justify-center text-white font-bold">2</div>
+                         <div class="md:w-1/2 md:pl-8 text-left">
+                            <div class="p-6 bg-white rounded-xl shadow-md">
+                                <h4 class="font-bold text-lg mb-2">2단계: 계정 선택</h4>
+                                <p class="mb-4">반드시 <span class="font-bold text-red-600">세아웍스(SeAH Works)에서 사용 중인</span> 본인의 Google 계정을 선택하세요.</p>
+                                <div class="w-full aspect-[4/3] bg-slate-100 rounded-lg border overflow-hidden">
+                                    <img src="https://placehold.co/600x450/E2E8F0/475569?text=Google+계정+선택" alt="Google 계정 선택 플레이스홀더" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-center relative fade-in">
+                        <div class="md:w-1/2 md:pr-8 text-right">
+                           <div class="p-6 bg-white rounded-xl shadow-md">
+                               <h4 class="font-bold text-lg mb-2">3단계: 로그인 계속</h4>
+                               <p class="mb-4">나타나는 확인 창에서 <span class="font-bold text-blue-600">[계속]</span> 버튼을 클릭하여 로그인을 완료합니다.</p>
+                               <div class="w-full aspect-[4/3] bg-slate-100 rounded-lg border overflow-hidden">
+                                   <img src="https://placehold.co/600x450/E2E8F0/475569?text=로그인+계속하기" alt="로그인 계속하기 플레이스홀더" class="w-full h-full object-cover">
+                               </div>
+                           </div>
+                       </div>
+                       <div class="absolute left-1/2 -translate-x-1/2 w-8 h-8 bg-blue-500 rounded-full border-4 border-white flex items-center justify-center text-white font-bold">3</div>
+                       <div class="hidden md:block md:w-1/2"></div>
+                   </div>
+
+                   <div class="flex items-center justify-center relative fade-in">
+                        <div class="hidden md:block md:w-1/2"></div>
+                        <div class="absolute left-1/2 -translate-x-1/2 w-8 h-8 bg-blue-500 rounded-full border-4 border-white flex items-center justify-center text-white font-bold">4</div>
+                        <div class="md:w-1/2 md:pl-8 text-left">
+                           <div class="p-6 bg-white rounded-xl shadow-md">
+                               <h4 class="font-bold text-lg mb-2">4단계: 로그인 성공!</h4>
+                               <p class="mb-4">인증이 완료되면 ERP 시스템 메인 화면으로 자동 접속됩니다.</p>
+                               <div class="w-full aspect-video bg-slate-100 rounded-lg border overflow-hidden">
+                                   <img src="https://placehold.co/600x338/E2E8F0/475569?text=ERP+메인+화면" alt="ERP 메인 화면 플레이스홀더" class="w-full h-full object-cover">
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="mb-20 md:mb-32 fade-in">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-2">더욱 편리한 추가 기능</h2>
+                <p class="text-slate-600">두 가지 추가 기능으로 ERP 사용을 더욱 편리하고 안전하게 만들어 보세요.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="p-8 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow fade-in">
+                     <div class="flex items-center mb-4">
+                        <span class="text-4xl mr-4">⚡️</span>
+                        <h3 class="text-2xl font-bold">구글 로그인 활성화</h3>
+                    </div>
+                    <p class="text-slate-600 mb-4">로그인 화면의 <span class="font-mono font-bold">[구글 로그인 활성화]</span> 옵션을 체크하세요. 다음부터는 ERP를 실행하면 로그인 화면 없이 바로 메인 화면으로 접속되어 더욱 빠르게 업무를 시작할 수 있습니다.</p>
+                    <div class="w-full aspect-video bg-slate-100 rounded-lg border overflow-hidden">
+                        <img src="https://placehold.co/600x338/E2E8F0/475569?text=구글+로그인+활성화" alt="구글 로그인 활성화 플레이스홀더" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="p-8 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow fade-in">
+                    <div class="flex items-center mb-4">
+                        <span class="text-4xl mr-4">🗑️</span>
+                        <h3 class="text-2xl font-bold">구글 정보 삭제</h3>
+                    </div>
+                    <p class="text-slate-600 mb-4">ERP 메인 화면 우측 상단의 사용자 메뉴에서 <span class="font-mono font-bold">[구글정보삭제]</span>를 클릭하여 현재 컴퓨터의 로그인 정보를 즉시 삭제할 수 있습니다. 공용 PC 사용 시 보안을 위해 꼭 사용해 주세요.</p>
+                    <div class="w-full aspect-video bg-slate-100 rounded-lg border overflow-hidden">
+                        <img src="https://placehold.co/600x338/E2E8F0/475569?text=구글+정보+삭제" alt="구글 정보 삭제 플레이스홀더" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="security" class="fade-in">
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-800 p-6 rounded-r-lg">
+                <h3 class="text-xl font-bold mb-2">🚨 중요 보안 안내</h3>
+                <p>개인 PC가 아닌 여러 사람이 함께 사용하는 **공용 컴퓨터**에서 Google 계정으로 로그인한 경우, 업무 종료 시 반드시 ERP 메인 화면의 **[구글정보삭제]** 버튼을 클릭하여 개인정보를 안전하게 보호해 주세요.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-sm text-slate-400">
+            <p>&copy; 2025 SeAH Besteel Holdings & VNTG. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const faders = document.querySelectorAll('.fade-in');
+
+            const appearOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    } else {
+                        entry.target.classList.add('visible');
+                        appearOnScroll.unobserve(entry.target);
+                    }
+                });
+            }, appearOptions);
+
+            faders.forEach(fader => {
+                appearOnScroll.observe(fader);
+            });
+
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId.startsWith('#')) {
+                        e.preventDefault();
+                        const targetElement = document.querySelector(targetId);
+                        if(targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
